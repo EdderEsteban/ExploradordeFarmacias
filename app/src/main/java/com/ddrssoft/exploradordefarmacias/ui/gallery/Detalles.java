@@ -34,12 +34,12 @@ public class Detalles extends Fragment {
         if (bundle != null) {
             List<Farmacia> farmacias = (List<Farmacia>) bundle.getSerializable("farmacia");
             if (farmacias != null && farmacias.size() > 0) {
-                // Mostrar los datos de la primera farmacia
+
                 Farmacia farmacia = farmacias.get(0);
                 tvTelefono.setText(String.valueOf(farmacia.getTelefono()));
                 tvHorario.setText(farmacia.getHorario());
 
-                // Cargar la imagen usando Glide 
+                // Cargar la imagen usando Glide
                 Glide.with(requireContext())
                         .load(farmacia.getFoto())
                         .into(ivFoto);
