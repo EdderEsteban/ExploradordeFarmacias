@@ -59,8 +59,8 @@ public class FarmaciaAdapter extends RecyclerView.Adapter<FarmaciaAdapter.ViewHo
                 @Override
                 public void onClick(View view) {
                     Bundle bundle = new Bundle();
-                    bundle.putSerializable("farmacia", (Serializable) farmacia);
-                    Navigation.findNavController(view).navigate(R.id.nav_detalles,bundle);
+                    bundle.putSerializable("farmacia", farmacia.get(getAdapterPosition()));
+                    Navigation.findNavController(view).navigate(R.id.nav_detalles, bundle);
 
                 }
             });

@@ -32,19 +32,17 @@ public class Detalles extends Fragment {
         // Recuperar los datos de la farmacia del Bundle
         Bundle bundle = getArguments();
         if (bundle != null) {
-            List<Farmacia> farmacias = (List<Farmacia>) bundle.getSerializable("farmacia");
-            if (farmacias != null && farmacias.size() > 0) {
+            Farmacia farmacia = (Farmacia) bundle.getSerializable("farmacia");
+            if (farmacia != null) {
+                tvTelefono.setText("Teléfono: " + farmacia.getTelefono());
+                tvHorario.setText("Horario: " + farmacia.getHorario());
 
-                Farmacia farmacia = farmacias.get(0);
-                tvTelefono.setText(String.valueOf(farmacia.getTelefono()));
-                tvHorario.setText(farmacia.getHorario());
-
-                // Cargar la imagen usando Glide
                 Glide.with(requireContext())
                         .load(farmacia.getFoto())
                         .into(ivFoto);
             }
         }
+
 
         return view;
     }
