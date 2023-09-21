@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.ddrssoft.exploradordefarmacias.ui.home.HomeFragment"
+        android:label="Mapa"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.ddrssoft.exploradordefarmacias.ui.gallery.GalleryFragment"
+        android:label="Lista de Farmacias"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_nav_gallery_to_detalles"
+            app:destination="@layout/fragment_detalles" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.ddrssoft.exploradordefarmacias.ui.slideshow.SlideshowFragment"
+        android:label="Configuracion"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_detalles"
+        android:name="com.ddrssoft.exploradordefarmacias.ui.gallery.Detalles"
+        android:label="@layout/fragment_detalles" >
+        <action
+            android:id="@+id/action_detalles_to_nav_gallery"
+            app:destination="@id/nav_gallery" />
+    </fragment>
+</navigation>
