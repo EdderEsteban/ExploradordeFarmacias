@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/nav_detalles"
         android:name="com.ddrssoft.exploradordefarmacias.ui.gallery.Detalles"
-        android:label="@layout/fragment_detalles" >
+        android:label="Detalles" >
         <action
             android:id="@+id/action_detalles_to_nav_gallery"
             app:destination="@id/nav_gallery" />

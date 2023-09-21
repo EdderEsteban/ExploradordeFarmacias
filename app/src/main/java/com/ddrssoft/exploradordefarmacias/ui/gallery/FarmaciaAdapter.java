@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.ddrssoft.exploradordefarmacias.R;
 import com.ddrssoft.exploradordefarmacias.modelo.Farmacia;
 
@@ -40,10 +42,13 @@ public class FarmaciaAdapter extends RecyclerView.Adapter<FarmaciaAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull FarmaciaAdapter.ViewHolder holder, int position) {
         holder.nombre.setText(farmacia.get(position).getNombre());
-        holder.direccion.setText(farmacia.get(position).getNombre());
-        /*holder.telefono.setText(farmacia.get(position).getTelefono());
+        holder.direccion.setText(farmacia.get(position).getDireccion());
+        holder.telefono.setText(farmacia.get(position).getTelefono());
         holder.horario.setText(farmacia.get(position).getHorario());
-        holder.foto.setText(farmacia.get(position).getFoto());*/
+        Glide.with(context)
+                .load(farmacia.get(position).getFoto())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(holder.foto);
     }
 
     @Override
@@ -54,20 +59,18 @@ public class FarmaciaAdapter extends RecyclerView.Adapter<FarmaciaAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView nombre;
         private TextView direccion;
+        private TextView telefono;
+        private TextView horario;
+        private ImageView foto;
         public ViewHolder(@NonNull View view) {
             super(view);
             nombre = itemView.findViewById(R.id.tvNombre);
-            /*Bundle bundle = new Bundle();
-            bundle.putSerializable("lugar", farmacia.get(getAdapterPosition()));
-            Intent intent = new Intent();
-            intent.putExtras(bundle);
-            view.getContext().startActivity(intent);*/
-        }
+            direccion = itemView.findViewById(R.id.tvDireccion);
+            telefono = itemView.findViewById(R.id.tvTelefono);
+            horario = itemView.findViewById(R.id.tvHorario);
+            foto = itemView.findViewById(R.id.ivfoto);
 
-    }
-}
-
-  /*itemView.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Bundle bundle = new Bundle();
@@ -75,4 +78,9 @@ public class FarmaciaAdapter extends RecyclerView.Adapter<FarmaciaAdapter.ViewHo
                     Navigation.findNavController(view).navigate(R.id.nav_detalles,bundle);
 
                 }
-            });*/
+            });
+
+        }
+
+    }
+}

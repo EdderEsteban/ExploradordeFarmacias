@@ -7,12 +7,12 @@ import java.io.Serializable;
 public class Farmacia implements Serializable {
     private String nombre;
     private String direccion;
-    private int telefono;
+    private String telefono;
     private String foto;
     private String horario;
 
 
-    public Farmacia(String nombre, String direccion, int telefono, String foto, String horario) {
+    public Farmacia(String nombre, String direccion, String telefono, String foto, String horario) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -39,11 +39,11 @@ public class Farmacia implements Serializable {
         this.direccion = direccion;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
