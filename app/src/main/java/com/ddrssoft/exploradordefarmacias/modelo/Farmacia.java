@@ -1,7 +1,5 @@
 package com.ddrssoft.exploradordefarmacias.modelo;
 
-import com.google.android.gms.maps.model.LatLng;
-
 import java.io.Serializable;
 
 public class Farmacia implements Serializable {
@@ -18,9 +16,7 @@ public class Farmacia implements Serializable {
         this.telefono = telefono;
         this.foto = foto;
         this.horario = horario;
-
     }
-
 
 
     public String getNombre() {
