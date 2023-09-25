@@ -38,6 +38,7 @@ public class FarmaciaAdapter extends RecyclerView.Adapter<FarmaciaAdapter.ViewHo
         holder.nombre.setText(farmacia.get(position).getNombre());
         holder.direccion.setText(farmacia.get(position).getDireccion());
 
+
     }
 
     @Override

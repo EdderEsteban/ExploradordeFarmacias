@@ -20,6 +20,7 @@ public class Detalles extends Fragment {
     // Recuperar los datos de la farmacia del Bundle
         Bundle bundle = getArguments();
         Farmacia farmacia = (Farmacia) bundle.getSerializable("farmacia");
+
         binding.tvTelefono.setText("Teléfono: " + farmacia.getTelefono());
         binding.tvHorario.setText("Horario: " + farmacia.getHorario());
         Glide.with(requireContext())

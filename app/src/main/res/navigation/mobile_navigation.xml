@@ -26,6 +26,7 @@
         android:name="com.ddrssoft.exploradordefarmacias.ui.slideshow.SlideshowFragment"
         android:label="Configuracion"
         tools:layout="@layout/fragment_slideshow" />
+
     <fragment
         android:id="@+id/nav_detalles"
         android:name="com.ddrssoft.exploradordefarmacias.ui.gallery.Detalles"
